@@ -1,100 +1,100 @@
 {
-  "data_file": "C:\\cybersecurity\\phishing-smishing-detector\\phishing-smishing-detector\\data\\sample_messages.csv",
-  "rows_raw": 600,
-  "rows_after_dedup": 579,
+  "data_file": "data\\uci_sms.csv",
+  "rows_raw": 5574,
+  "rows_after_dedup": 5137,
   "split": {
-    "train": 347,
-    "val": 116,
-    "test": 116
+    "train": 3081,
+    "val": 1028,
+    "test": 1028
   },
-  "selected_model": "naive_bayes_word",
+  "selected_model": "logreg_word",
   "results": {
     "keyword_baseline": {
       "val": {
-        "precision": 0.9412,
-        "recall": 0.8,
-        "f1": 0.8649,
-        "false_positive_rate": 0.0536,
-        "tn": 53,
-        "fp": 3,
-        "fn": 12,
-        "tp": 48
+        "precision": 0.7619,
+        "recall": 0.2581,
+        "f1": 0.3855,
+        "false_positive_rate": 0.0111,
+        "tn": 894,
+        "fp": 10,
+        "fn": 92,
+        "tp": 32
       },
       "test": {
-        "precision": 0.94,
-        "recall": 0.7833,
-        "f1": 0.8545,
-        "false_positive_rate": 0.0536,
-        "tn": 53,
-        "fp": 3,
-        "fn": 13,
-        "tp": 47
+        "precision": 0.825,
+        "recall": 0.2661,
+        "f1": 0.4024,
+        "false_positive_rate": 0.0077,
+        "tn": 897,
+        "fp": 7,
+        "fn": 91,
+        "tp": 33
       }
     },
     "naive_bayes_word": {
       "val": {
         "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
+        "recall": 0.379,
+        "f1": 0.5497,
         "false_positive_rate": 0.0,
-        "tn": 56,
+        "tn": 904,
         "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "fn": 77,
+        "tp": 47
       },
       "test": {
         "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
+        "recall": 0.4194,
+        "f1": 0.5909,
         "false_positive_rate": 0.0,
-        "tn": 56,
+        "tn": 904,
         "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "fn": 72,
+        "tp": 52
       }
     },
     "logreg_word": {
       "val": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
-        "false_positive_rate": 0.0,
-        "tn": 56,
-        "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "precision": 0.9274,
+        "recall": 0.9274,
+        "f1": 0.9274,
+        "false_positive_rate": 0.01,
+        "tn": 895,
+        "fp": 9,
+        "fn": 9,
+        "tp": 115
       },
       "test": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
-        "false_positive_rate": 0.0,
-        "tn": 56,
-        "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "precision": 0.9055,
+        "recall": 0.9274,
+        "f1": 0.9163,
+        "false_positive_rate": 0.0133,
+        "tn": 892,
+        "fp": 12,
+        "fn": 9,
+        "tp": 115
       }
     },
     "logreg_char": {
       "val": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
-        "false_positive_rate": 0.0,
-        "tn": 56,
-        "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "precision": 0.9412,
+        "recall": 0.9032,
+        "f1": 0.9218,
+        "false_positive_rate": 0.0077,
+        "tn": 897,
+        "fp": 7,
+        "fn": 12,
+        "tp": 112
       },
       "test": {
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0,
-        "false_positive_rate": 0.0,
-        "tn": 56,
-        "fp": 0,
-        "fn": 0,
-        "tp": 60
+        "precision": 0.9431,
+        "recall": 0.9355,
+        "f1": 0.9393,
+        "false_positive_rate": 0.0077,
+        "tn": 897,
+        "fp": 7,
+        "fn": 8,
+        "tp": 116
       }
     }
   }
