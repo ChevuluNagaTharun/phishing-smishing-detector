@@ -11,6 +11,15 @@ A machine learning tool that classifies SMS and email text as phishing/smishing 
 - Explains each prediction by showing the terms that pushed the score.
 - Serves predictions through a command-line tool, a small web page and a JSON API.
 
+## Screenshots
+
+**Web interface: message flagged as a threat**
+
+<img src="docs/screenshots/threat-detected.png" width="700" alt="Web interface showing a phishing message flagged with threat score and indicator terms">
+
+**Model comparison results**
+
+<img src="docs/screenshots/results.png" width="700" alt="Results table comparing the keyword baseline with Naive Bayes and Logistic Regression models">
 ## Quick start
 
 ```bash
@@ -78,6 +87,26 @@ Evaluated on a held-out test set from the UCI SMS Spam Collection (stratified sp
 | Logistic Regression (word), selected on validation | UCI SMS Spam | 0.906 | 0.927 | 0.916 | 0.013 |
 | Logistic Regression (char) | UCI SMS Spam | 0.943 | 0.935 | 0.939 | 0.008 |
 | DistilBERT | not yet run | | | | |
+
+## Error analysis
+
+On the test set (1,028 messages, 124 spam) the selected model missed 9 spam messages and wrongly flagged 12 legitimate ones. No error was extreme: false alarms scored 0.51 to 0.82, and 8 of the 9 missed spam messages scored 0.28 to 0.48.
+
+**Missed spam (9)**
+- 3 read like ordinary conversation or a horoscope, with none of the usual trigger words.
+- 4 are brand marketing or consumer-complaint style messages that mention companies or bills without typical spam vocabulary.
+- 2 are premium-rate or subscription messages just under the threshold (scores 0.45 and 0.48); one has words and prices run together, which word-level features handle poorly.
+
+**False alarms (12)**
+- 5 are short personal messages containing "call" or "free", words that are strong spam cues in this dataset and are over-weighted.
+- 1 is a genuine bank security notice that uses phishing-like vocabulary, a limit of text-only classification.
+- The rest are very short, low-information messages that scored just above 0.5.
+
+**Takeaways**
+- The 0.5 threshold is a default, not a choice. A precision-recall curve should be used to pick it.
+- Several false alarms are informal regional-English messages. With only 12 examples this is a hypothesis, but it suggests weak generalization to Indian-English text and motivates an India-focused smishing dataset.
+- Some "missed" messages look like person-to-person text, so label noise is possible; labels were not manually audited.
+- Planned improvements: character n-gram features for obfuscated text, URL and phone-number features, and threshold tuning.
 
 **Notes**
 - The logistic regression models catch about 93% of spam, against 27% for the keyword rule.
