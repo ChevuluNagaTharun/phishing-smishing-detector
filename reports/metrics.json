@@ -1,0 +1,101 @@
+{
+  "data_file": "C:\\cybersecurity\\phishing-smishing-detector\\phishing-smishing-detector\\data\\sample_messages.csv",
+  "rows_raw": 600,
+  "rows_after_dedup": 579,
+  "split": {
+    "train": 347,
+    "val": 116,
+    "test": 116
+  },
+  "selected_model": "naive_bayes_word",
+  "results": {
+    "keyword_baseline": {
+      "val": {
+        "precision": 0.9412,
+        "recall": 0.8,
+        "f1": 0.8649,
+        "false_positive_rate": 0.0536,
+        "tn": 53,
+        "fp": 3,
+        "fn": 12,
+        "tp": 48
+      },
+      "test": {
+        "precision": 0.94,
+        "recall": 0.7833,
+        "f1": 0.8545,
+        "false_positive_rate": 0.0536,
+        "tn": 53,
+        "fp": 3,
+        "fn": 13,
+        "tp": 47
+      }
+    },
+    "naive_bayes_word": {
+      "val": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      }
+    },
+    "logreg_word": {
+      "val": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      }
+    },
+    "logreg_char": {
+      "val": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "tn": 56,
+        "fp": 0,
+        "fn": 0,
+        "tp": 60
+      }
+    }
+  }
+}

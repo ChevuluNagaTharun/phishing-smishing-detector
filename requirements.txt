@@ -1,0 +1,12 @@
+scikit-learn
+pandas
+numpy
+joblib
+matplotlib
+flask
+
+# Phase 2 (optional, on your own machine):
+# shap            # per-message explanations
+# transformers    # fine-tuned DistilBERT / multilingual model
+# torch
+# streamlit       # nicer UI than the minimal Flask page
